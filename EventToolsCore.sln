@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventToolsCore", "EventToolsCore\EventToolsCore.csproj", "{8BFFC3EA-F697-4957-8461-B492B130AC1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventToolsCore", "EventToolsCore\EventToolsCore.csproj", "{8BFFC3EA-F697-4957-8461-B492B130AC1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventToolsCore.Domain", "EventToolsCore.Domain\EventToolsCore.Domain.csproj", "{34BCD996-346F-455D-ADB6-D11487F58AA9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventToolsCore.Core", "EventToolsCore.Core\EventToolsCore.Core.csproj", "{794D4A45-9134-41F2-AF7B-931AA1B18BFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventToolsCore.Workload.Meetings", "EventToolsCore.Workload.Meetings\EventToolsCore.Workload.Meetings.csproj", "{CD719E95-85D3-4B5F-90F1-3A01A070238B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{8BFFC3EA-F697-4957-8461-B492B130AC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BFFC3EA-F697-4957-8461-B492B130AC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BFFC3EA-F697-4957-8461-B492B130AC1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34BCD996-346F-455D-ADB6-D11487F58AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34BCD996-346F-455D-ADB6-D11487F58AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34BCD996-346F-455D-ADB6-D11487F58AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34BCD996-346F-455D-ADB6-D11487F58AA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{794D4A45-9134-41F2-AF7B-931AA1B18BFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{794D4A45-9134-41F2-AF7B-931AA1B18BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{794D4A45-9134-41F2-AF7B-931AA1B18BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{794D4A45-9134-41F2-AF7B-931AA1B18BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD719E95-85D3-4B5F-90F1-3A01A070238B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD719E95-85D3-4B5F-90F1-3A01A070238B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD719E95-85D3-4B5F-90F1-3A01A070238B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD719E95-85D3-4B5F-90F1-3A01A070238B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
