@@ -10,26 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mobx_1 = require("mobx");
-const MenuItems = require("../data/menuItems");
-class MenuService {
-    constructor() {
-        this.menuItems = [];
-    }
-    addMenuItem(menuItem) {
-        if (!this.menuItems) {
-            this.menuItems = [];
-        }
-        this.menuItems.push(menuItem);
+class EntityFormat {
+    constructor(EntityType, content) {
+        this.EntityType = EntityType;
+        // The reason for not auto-declaring this in the constructor is that now we can update the content at runtime 
+        // and the rendered content will automagically change
+        this.Content = content;
     }
 }
 __decorate([
     mobx_1.observable,
-    __metadata("design:type", Array)
-], MenuService.prototype, "menuItems", void 0);
+    __metadata("design:type", Object)
+], EntityFormat.prototype, "Content", void 0);
+exports.EntityFormat = EntityFormat;
+class EntityTileFormat extends EntityFormat {
+    constructor(entityType, tileLayout, content) {
+        super(entityType, content);
+        this.TileLayout = tileLayout;
+    }
+}
 __decorate([
-    mobx_1.action,
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], MenuService.prototype, "addMenuItem", null);
-exports.MenuService = MenuService;
+    mobx_1.observable,
+    __metadata("design:type", String)
+], EntityTileFormat.prototype, "TileLayout", void 0);
+exports.EntityTileFormat = EntityTileFormat;
+class EntityListFormat extends EntityFormat {
+}
+exports.EntityListFormat = EntityListFormat;

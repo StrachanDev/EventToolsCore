@@ -6,5 +6,6 @@ namespace EventToolsCore.Domain
 {
     public class Person : EntityBase
     {
+        public Person() : base(nameof(Person)) { }
     }
 }

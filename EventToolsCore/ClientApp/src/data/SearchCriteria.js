@@ -10,26 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mobx_1 = require("mobx");
-const MenuItems = require("../data/menuItems");
-class MenuService {
-    constructor() {
-        this.menuItems = [];
+class SearchFacet {
+    constructor(Category, Value) {
+        this.Category = Category;
+        this.Value = Value;
     }
-    addMenuItem(menuItem) {
-        if (!this.menuItems) {
-            this.menuItems = [];
-        }
-        this.menuItems.push(menuItem);
+}
+exports.SearchFacet = SearchFacet;
+class SearchCriteria {
+    constructor(Entity, text) {
+        this.Entity = Entity;
+        this.Text = text;
     }
 }
 __decorate([
     mobx_1.observable,
-    __metadata("design:type", Array)
-], MenuService.prototype, "menuItems", void 0);
+    __metadata("design:type", String)
+], SearchCriteria.prototype, "Text", void 0);
 __decorate([
-    mobx_1.action,
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], MenuService.prototype, "addMenuItem", null);
-exports.MenuService = MenuService;
+    mobx_1.observable,
+    __metadata("design:type", Array)
+], SearchCriteria.prototype, "Facets", void 0);
+__decorate([
+    mobx_1.observable,
+    __metadata("design:type", Number)
+], SearchCriteria.prototype, "Page", void 0);
+exports.SearchCriteria = SearchCriteria;

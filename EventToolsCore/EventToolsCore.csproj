@@ -41,15 +41,43 @@
   <ItemGroup>
     <None Remove="ClientApp\src\components\MenuItem.tsx" />
     <None Remove="ClientApp\src\components\NavigationMenu.tsx" />
+    <None Remove="ClientApp\src\components\Search.tsx" />
+    <None Remove="ClientApp\src\data\Action.ts" />
+    <None Remove="ClientApp\src\data\Configuration\ContentFormats.ts" />
+    <None Remove="ClientApp\src\data\ContentDefinitions.ts" />
+    <None Remove="ClientApp\src\data\ContentRenderer.ts" />
+    <None Remove="ClientApp\src\data\Entity.ts" />
+    <None Remove="ClientApp\src\data\EntityFormats.ts" />
     <None Remove="ClientApp\src\data\menuItems.ts" />
+    <None Remove="ClientApp\src\data\SearchCriteria.ts" />
+    <None Remove="ClientApp\src\data\SearchResponse.ts" />
+    <None Remove="ClientApp\src\global\typeguard.ts" />
+    <None Remove="ClientApp\src\services\EntityFormatService.ts" />
     <None Remove="ClientApp\src\services\MenuService.ts" />
+    <None Remove="ClientApp\src\services\RendererResolutionService.tsx" />
+    <None Remove="ClientApp\src\services\SearchService.ts" />
+    <None Remove="ClientApp\src\services\UserService.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\components\MenuItem.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\NavigationMenu.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\Search.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\data\Action.ts" />
+    <TypeScriptCompile Include="ClientApp\src\data\Configuration\ContentDefinitions.ts" />
+    <TypeScriptCompile Include="ClientApp\src\data\Configuration\ContentFormats.ts" />
+    <TypeScriptCompile Include="ClientApp\src\components\render\ContentRenderer.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\data\Entity.ts" />
+    <TypeScriptCompile Include="ClientApp\src\data\Configuration\EntityFormats.ts" />
     <TypeScriptCompile Include="ClientApp\src\data\menuItems.ts" />
+    <TypeScriptCompile Include="ClientApp\src\data\SearchCriteria.ts" />
+    <TypeScriptCompile Include="ClientApp\src\data\SearchResponse.ts" />
+    <TypeScriptCompile Include="ClientApp\src\global\typeguard.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\EntityFormatService.ts" />
     <TypeScriptCompile Include="ClientApp\src\services\MenuService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\RendererResolutionService.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\services\SearchService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\services\UserService.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

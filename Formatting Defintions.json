@@ -1,0 +1,37 @@
+FieldFormats 
+  
+EntityTileFormat {
+  "TileLayout": "Standard",
+  "EntityType": "Person",
+  "Content": {
+    // TileContentFormat
+    "Header": "displayName",
+    "SubHeader": "entityType"
+  }
+} EntityTileFormat for Person: {
+  "TileLayout": "Standard",
+  "EntityType": "Person",
+  "Content": {
+    // TileContentFormat
+    "Image": "photoLink",
+    "Header": "displayName",
+    "SubHeader": "entityType"
+  }
+} EntityTileFormat for Session: {
+  "TileLayout": "Standard",
+  "EntityType": "Session",
+  "Content": {
+    // TileContentFormat
+    "Image": "image",
+    "Header": {
+      "Type": "Array",
+      "Render": "EntityLink",
+      "Separator": " - "
+      [
+        "code"
+        "displayName"
+      ]
+    },
+    "SubHeader": "entityType"
+  }
+}

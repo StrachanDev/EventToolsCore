@@ -9,27 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const mobx_1 = require("mobx");
-const MenuItems = require("../data/menuItems");
-class MenuService {
-    constructor() {
-        this.menuItems = [];
+const React = require("react");
+const mobx_react_1 = require("mobx-react");
+let ContentRenderer = class ContentRenderer extends React.Component {
+    constructor(props) {
+        super(props);
     }
-    addMenuItem(menuItem) {
-        if (!this.menuItems) {
-            this.menuItems = [];
-        }
-        this.menuItems.push(menuItem);
+    render() {
+        return this.resolveEntityFormats(this.props.entityFormatService.GetEntityFormat(this.props.entity.Type, this.props.format, this.props.userService.LoggedOnUser.UserType), this.props.entity);
     }
-}
-__decorate([
-    mobx_1.observable,
-    __metadata("design:type", Array)
-], MenuService.prototype, "menuItems", void 0);
-__decorate([
-    mobx_1.action,
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], MenuService.prototype, "addMenuItem", null);
-exports.MenuService = MenuService;
+    resolveEntityFormats(entityFormat, entity) {
+        return this.props.rendererResolutionService.resolve(entityFormat, this.props.entity);
+    }
+};
+ContentRenderer = __decorate([
+    mobx_react_1.inject('entityFormatService', 'userService', 'rendererResolutionService'),
+    __metadata("design:paramtypes", [Object])
+], ContentRenderer);
+exports.ContentRenderer = ContentRenderer;

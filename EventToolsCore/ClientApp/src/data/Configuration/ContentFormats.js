@@ -10,26 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mobx_1 = require("mobx");
-const MenuItems = require("../data/menuItems");
-class MenuService {
-    constructor() {
-        this.menuItems = [];
-    }
-    addMenuItem(menuItem) {
-        if (!this.menuItems) {
-            this.menuItems = [];
-        }
-        this.menuItems.push(menuItem);
-    }
+class TileContentFormat {
 }
 __decorate([
     mobx_1.observable,
-    __metadata("design:type", Array)
-], MenuService.prototype, "menuItems", void 0);
+    __metadata("design:type", Object)
+], TileContentFormat.prototype, "Image", void 0);
 __decorate([
-    mobx_1.action,
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], MenuService.prototype, "addMenuItem", null);
-exports.MenuService = MenuService;
+    mobx_1.observable,
+    __metadata("design:type", Object)
+], TileContentFormat.prototype, "Header", void 0);
+__decorate([
+    mobx_1.observable,
+    __metadata("design:type", Object)
+], TileContentFormat.prototype, "SubHeader", void 0);
+exports.TileContentFormat = TileContentFormat;

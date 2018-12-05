@@ -8,11 +8,11 @@ export class MenuService {
         this.menuItems = [];
     }
 
-    @action public addMenuItem(id: string, displayName: string, description: string) {
+    @action public addMenuItem(menuItem: MenuItems.IMenuItem) {
         if (!this.menuItems) {
             this.menuItems = [];
         }
 
-        this.menuItems.push({ id: id, displayName: displayName, description: description });
+        this.menuItems.push(menuItem);
     }
 }

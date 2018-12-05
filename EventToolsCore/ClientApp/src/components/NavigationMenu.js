@@ -34,7 +34,7 @@ let NavigationMenu = class NavigationMenu extends React.Component {
                     React.createElement(reactstrap_1.NavbarToggler, { onClick: this.toggleNavbar, className: "mr-2" }),
                     React.createElement(reactstrap_1.Collapse, { className: "d-sm-inline-flex flex-sm-row-reverse", isOpen: true, navbar: true },
                         React.createElement("ul", { className: "navbar-nav flex-grow" }, this.props.menuService.menuItems.map(mi => {
-                            return (React.createElement(MenuItem_1.MenuItem, { key: mi.id, id: mi.id, displayName: mi.displayName, description: mi.description }));
+                            return (React.createElement(MenuItem_1.MenuItem, { key: mi.Id, Id: mi.Id, DisplayName: mi.DisplayName, Description: mi.Description }));
                         })))))));
     }
 };

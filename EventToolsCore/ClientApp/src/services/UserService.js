@@ -10,26 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mobx_1 = require("mobx");
-const MenuItems = require("../data/menuItems");
-class MenuService {
-    constructor() {
-        this.menuItems = [];
+class User {
+    constructor(userType) {
+        this.UserType = userType || User.anonymous;
     }
-    addMenuItem(menuItem) {
-        if (!this.menuItems) {
-            this.menuItems = [];
-        }
-        this.menuItems.push(menuItem);
+    get IsAnonymous() {
+        return this.UserType === User.anonymous;
+    }
+}
+User.anonymous = 'anonymous';
+__decorate([
+    mobx_1.computed,
+    __metadata("design:type", Boolean),
+    __metadata("design:paramtypes", [])
+], User.prototype, "IsAnonymous", null);
+__decorate([
+    mobx_1.observable,
+    __metadata("design:type", String)
+], User.prototype, "UserType", void 0);
+exports.User = User;
+class UserService {
+    constructor() {
+        this.LoggedOnUser = new User();
     }
 }
 __decorate([
     mobx_1.observable,
-    __metadata("design:type", Array)
-], MenuService.prototype, "menuItems", void 0);
-__decorate([
-    mobx_1.action,
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], MenuService.prototype, "addMenuItem", null);
-exports.MenuService = MenuService;
+    __metadata("design:type", User)
+], UserService.prototype, "LoggedOnUser", void 0);
+exports.UserService = UserService;

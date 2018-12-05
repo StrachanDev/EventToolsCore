@@ -10,26 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mobx_1 = require("mobx");
-const MenuItems = require("../data/menuItems");
-class MenuService {
-    constructor() {
-        this.menuItems = [];
-    }
-    addMenuItem(menuItem) {
-        if (!this.menuItems) {
-            this.menuItems = [];
-        }
-        this.menuItems.push(menuItem);
+// The basic definition of an Entity from which all other entities must derive
+class Entity {
+    constructor(Type, Id, displayName) {
+        this.Type = Type;
+        this.Id = Id;
+        this.displayName = displayName;
     }
 }
 __decorate([
     mobx_1.observable,
-    __metadata("design:type", Array)
-], MenuService.prototype, "menuItems", void 0);
+    __metadata("design:type", String)
+], Entity.prototype, "displayName", void 0);
 __decorate([
-    mobx_1.action,
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], MenuService.prototype, "addMenuItem", null);
-exports.MenuService = MenuService;
+    mobx_1.observable,
+    __metadata("design:type", Array)
+], Entity.prototype, "entityType", void 0);
+exports.Entity = Entity;
+class SessionEntity extends Entity {
+    constructor(id, displayName) {
+        super(['Session'], id, displayName);
+    }
+}
+exports.SessionEntity = SessionEntity;

@@ -34,7 +34,7 @@ export class NavigationMenu extends React.Component<{ menuService?: MenuService 
                                 {
                                     this.props.menuService.menuItems.map(mi => {
                                         return (
-                                            <MenuItem key={mi.id} id={mi.id} displayName={mi.displayName} description={mi.description}>
+                                            <MenuItem key={mi.Id} Id={mi.Id} DisplayName={mi.DisplayName} Description={mi.Description}>
                                             </MenuItem>)
                                     })
                                 }

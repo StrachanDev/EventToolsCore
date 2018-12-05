@@ -23,39 +23,39 @@ export class MenuItem extends React.Component<IMenuItem, {}> {
 
     @computed
     get canExecute(): boolean {
-        return this.props.canExecute ? this.props.canExecute() : true;
+        return !this.props.CanExecute || this.props.CanExecute();
     }
 
     @computed
     get isVisible(): boolean {
-        return this.props.isVisible ? this.props.isVisible() : true;
+        return !this.props.IsVisible || this.props.IsVisible();
     }
 
     @action
     execute() {
-        if (this.props.subMenuItems && this.props.subMenuItems.length) {
+        if (this.props.SubMenuItems && this.props.SubMenuItems.length) {
             this.toggleDropDown();
         } else {
             // Depends on the type of the menu item.  Needs to be defined.
-            this.canExecute && (this.props.execute && this.props.execute());
+            this.canExecute && (this.props.Execute && this.props.Execute());
         }
     }
 
     render() {
-        return (this.props.subMenuItems && this.props.subMenuItems.length > 0) ? (
+        return (this.props.SubMenuItems && this.props.SubMenuItems.length > 0) ? (
             <DropdownMenu onClick={this.execute.bind(this)}>
                 <ul className="navbar-nav flex-grow">
-                    {this.props.subMenuItems.map((smi) => {
+                    {this.props.SubMenuItems.map((smi) => {
                         return (
-                            <MenuItem id={smi.displayName} displayName={smi.displayName} description={smi.description} subMenuItems={smi.subMenuItems}>
+                            <MenuItem key={smi.Id} Id={smi.Id} DisplayName={smi.DisplayName} Description={smi.Description} SubMenuItems={smi.SubMenuItems}>
                             </MenuItem>
                         );
                     })}
                 </ul>
             </DropdownMenu>
         ) : (
-                <NavItem key={this.props.id}>
-                    <NavLink tag={Link} className="text-dark" to="/">{this.props.displayName}</NavLink>
+                <NavItem key={this.props.Id}>
+                    <NavLink tag={Link} className="text-dark" to="/">{this.props.DisplayName}</NavLink>
                 </NavItem>
             )
     }

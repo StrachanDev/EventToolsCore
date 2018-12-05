@@ -6,6 +6,8 @@ namespace EventToolsCore.Domain
 {
     public class Location : EntityBase
     {
+        public Location() : base(nameof(Location)) { }
+
         public string PositionId { get; set; }
     }
 }

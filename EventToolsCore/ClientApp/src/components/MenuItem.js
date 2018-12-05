@@ -23,26 +23,26 @@ class MenuItem extends React.Component {
         this.isExpanded = !this.isExpanded;
     }
     get canExecute() {
-        return this.props.canExecute ? this.props.canExecute() : true;
+        return !this.props.CanExecute || this.props.CanExecute();
     }
     get isVisible() {
-        return this.props.isVisible ? this.props.isVisible() : true;
+        return !this.props.IsVisible || this.props.IsVisible();
     }
     execute() {
-        if (this.props.subMenuItems && this.props.subMenuItems.length) {
+        if (this.props.SubMenuItems && this.props.SubMenuItems.length) {
             this.toggleDropDown();
         }
         else {
             // Depends on the type of the menu item.  Needs to be defined.
-            this.canExecute && (this.props.execute && this.props.execute());
+            this.canExecute && (this.props.Execute && this.props.Execute());
         }
     }
     render() {
-        return (this.props.subMenuItems && this.props.subMenuItems.length > 0) ? (React.createElement(reactstrap_1.DropdownMenu, { onClick: this.execute.bind(this) },
-            React.createElement("ul", { className: "navbar-nav flex-grow" }, this.props.subMenuItems.map((smi) => {
-                return (React.createElement(MenuItem, { id: smi.displayName, displayName: smi.displayName, description: smi.description, subMenuItems: smi.subMenuItems }));
-            })))) : (React.createElement(reactstrap_1.NavItem, { key: this.props.id },
-            React.createElement(reactstrap_1.NavLink, { tag: react_router_dom_1.Link, className: "text-dark", to: "/" }, this.props.displayName)));
+        return (this.props.SubMenuItems && this.props.SubMenuItems.length > 0) ? (React.createElement(reactstrap_1.DropdownMenu, { onClick: this.execute.bind(this) },
+            React.createElement("ul", { className: "navbar-nav flex-grow" }, this.props.SubMenuItems.map((smi) => {
+                return (React.createElement(MenuItem, { key: smi.Id, Id: smi.Id, DisplayName: smi.DisplayName, Description: smi.Description, SubMenuItems: smi.SubMenuItems }));
+            })))) : (React.createElement(reactstrap_1.NavItem, { key: this.props.Id },
+            React.createElement(reactstrap_1.NavLink, { tag: react_router_dom_1.Link, className: "text-dark", to: "/" }, this.props.DisplayName)));
     }
 }
 __decorate([
